@@ -1,2 +1,10 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<!-- 
+
+I had the same issue and resolved it by adding before_action: authenticate_tenant! in application_controller.rb. Then I changed the method from before_filter to before_action in /config/initializers/devise_permitted_parameters.rb and it worked just fine!
+
+During rake db:migrate. An error will occur to solve it in add_sessions_table.rb Change the ActiveRecord::MIgration to ActiveRecord::MIgration[5.1]. This 5.1 is your version of rails 
+
+-->
